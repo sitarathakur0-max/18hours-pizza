@@ -1,0 +1,6 @@
+{
+  "name": "18 Hours Pizza & Cafe | Khanewal",
+  "description": "Explore pizza, pasta and cafe-style food at 18 Hours Pizza & Cafe on Jamia Annatia Road, Khanewal. View the menu, read customer reviews and contact the restaurant to order or inquire.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
