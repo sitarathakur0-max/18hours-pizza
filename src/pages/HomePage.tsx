@@ -1,21 +1,27 @@
 import React from "react";
 import { ArrowRight, MessageCircle, Phone, Sparkles, MapPin, CheckCircle2 } from "lucide-react";
-import { RESTAURANT_INFO, IMAGES, getWhatsAppUrl, REVIEWS } from "../data/restaurantData";
+import { RESTAURANT_INFO, getWhatsAppUrl, REVIEWS } from "../data/restaurantData";
 import { TrustStrip } from "../components/TrustStrip";
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
 }
 
+// ===== Direct Image URLs =====
+const IMG_HERO_PIZZA     = "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1600&auto=format&fit=crop";
+const IMG_SPECIAL_SLICE  = "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200&auto=format&fit=crop";
+const IMG_CREAMY_PASTA   = "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=1200&auto=format&fit=crop";
+const IMG_CAFE_AMBIENCE  = "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop";
+const IMG_TAKEAWAY_BOX   = "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=1400&auto=format&fit=crop";
+
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   return (
     <div className="space-y-16 sm:space-y-24">
       {/* HERO SECTION */}
       <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#121316]">
-        {/* Background Image with Measured Scrim */}
         <div className="absolute inset-0 z-0">
           <img
-            src={IMAGES.heroPizza}
+            src={IMG_HERO_PIZZA}
             alt="Freshly baked gourmet pizza at 18 Hours Pizza & Cafe Khanewal"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover object-center scale-105 transform motion-safe:animate-pulse motion-safe:duration-[10000ms]"
@@ -24,7 +30,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#121316]/90 via-[#121316]/60 to-transparent" />
         </div>
 
-        {/* Brand Typographic Element "18" */}
         <div
           aria-hidden="true"
           className="absolute right-4 md:right-16 top-1/2 -translate-y-1/2 select-none pointer-events-none font-display font-black text-[180px] sm:text-[280px] md:text-[380px] lg:text-[460px] text-white/[0.04] leading-none z-0"
@@ -32,11 +37,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           18
         </div>
 
-        {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="max-w-3xl space-y-6">
-            
-            {/* Location & Concept Kicker */}
             <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-medium text-[#FAF8F5]/80">
               <span className="flex items-center gap-1.5 text-[#F59E0B]">
                 <MapPin className="w-4 h-4" />
@@ -48,7 +50,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <span className="text-emerald-400 font-semibold">Open Late (Until 3 AM)</span>
             </div>
 
-            {/* Main Headline */}
             <h1 className="font-display font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.08] text-balance">
               Late-Night Cravings <br className="hidden sm:inline" />
               <span className="bg-gradient-to-r from-white via-[#FAF8F5] to-[#F59E0B] bg-clip-text text-transparent">
@@ -56,12 +57,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </span>
             </h1>
 
-            {/* Supporting Copy */}
             <p className="text-base sm:text-xl text-[#FAF8F5]/85 leading-relaxed max-w-2xl">
               Pizza, pasta and satisfying food moments from 18 Hours Pizza & Cafe in Khanewal. Made hot and fresh for late gatherings, family treats, and quick takeaway cravings.
             </p>
 
-            {/* Action Buttons */}
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <button
                 onClick={() => onNavigate("menu")}
@@ -88,7 +87,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </a>
             </div>
 
-            {/* Small Brand Pill-Free Info Strip */}
             <div className="pt-4 flex items-center gap-3 text-xs text-[#FAF8F5]/60">
               <span>Haier Store (City Electronics)</span>
               <span aria-hidden="true">/</span>
@@ -96,7 +94,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <span aria-hidden="true">/</span>
               <span className="text-[#F59E0B] font-medium">4.6★ on Google (85 reviews)</span>
             </div>
-
           </div>
         </div>
       </section>
@@ -126,7 +123,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <div className="group relative bg-[#18191E] border border-white/10 hover:border-[#E11D48]/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between">
             <div className="aspect-4/3 relative overflow-hidden bg-black/40">
               <img
-                src={IMAGES.heroPizza}
+                src={IMG_HERO_PIZZA}
                 alt="Piping hot pizza with bubbling cheese"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -158,7 +155,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <div className="group relative bg-[#18191E] border border-[#F59E0B]/40 hover:border-[#F59E0B] rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between">
             <div className="aspect-4/3 relative overflow-hidden bg-black/40">
               <img
-                src={IMAGES.specialSlice}
+                src={IMG_SPECIAL_SLICE}
                 alt="Customer favorite special pizza slice"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -194,7 +191,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <div className="group relative bg-[#18191E] border border-white/10 hover:border-[#EA580C]/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between">
             <div className="aspect-4/3 relative overflow-hidden bg-black/40">
               <img
-                src={IMAGES.creamyPasta}
+                src={IMG_CREAMY_PASTA}
                 alt="Creamy hot pasta bowl"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -226,7 +223,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <div className="group relative bg-[#18191E] border border-white/10 hover:border-white/30 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between">
             <div className="aspect-4/3 relative overflow-hidden bg-black/40">
               <img
-                src={IMAGES.cafeAmbience}
+                src={IMG_CAFE_AMBIENCE}
                 alt="Cafe moments with pizza and pasta"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -256,23 +253,20 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* SPOTLIGHT: SPECIAL PIZZA & SPECIAL PASTA */}
+      {/* SPOTLIGHT */}
       <section className="bg-[#18191E] border-y border-white/10 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            
-            {/* Visual Column */}
             <div className="relative">
               <div className="rounded-2xl overflow-hidden border border-white/15 shadow-2xl">
                 <img
-                  src={IMAGES.takeawayBox}
+                  src={IMG_TAKEAWAY_BOX}
                   alt="Freshly baked hot pizza takeaway box ready for pickup"
                   referrerPolicy="no-referrer"
                   className="w-full h-auto object-cover aspect-4/3"
                 />
               </div>
-              
-              {/* Floating Verified Experience Card */}
+
               <div className="absolute -bottom-6 -right-2 sm:right-6 bg-[#121316]/95 border border-white/20 p-5 rounded-xl shadow-2xl max-w-xs backdrop-blur-md">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#F59E0B] mb-1">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400" />
@@ -287,7 +281,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
             </div>
 
-            {/* Editorial Column */}
             <div className="space-y-6">
               <span className="text-xs font-bold uppercase tracking-widest text-[#E11D48]">
                 What Customers Love Most
@@ -338,7 +331,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   View Specialties Details
                 </button>
               </div>
-
             </div>
           </div>
         </div>

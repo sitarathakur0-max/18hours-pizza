@@ -46,13 +46,31 @@ export function getWhatsAppUrl(message: string = RESTAURANT_INFO.defaultWhatsApp
   return `https://wa.me/${RESTAURANT_INFO.whatsAppNumber}?text=${encodeURIComponent(message)}`;
 }
 
+
+  // heroPizza: "/src/assets/images/hero pizza.jpg",
+  // specialSlice: "/src/assets/images/special.jpg",
+  // creamyPasta: "/src/assets/images/pista.jpg",
+  // cafeAmbience: "/src/assets/images/dinning.jpg",
+  // takeawayBox: "/src/assets/images/takka pizza.jpg",
+ 
+  
 export const IMAGES = {
-  heroPizza: "/src/assets/images/hero_pizza_khanewal_1791473702357.jpg",
-  specialSlice: "/src/assets/images/special_pizza_slice_1791473717015.jpg",
-  creamyPasta: "/src/assets/images/creamy_special_pasta_1791473732224.jpg",
-  cafeAmbience: "/src/assets/images/cafe_dining_ambience_1791473747315.jpg",
-  takeawayBox: "/src/assets/images/takeaway_pizza_box_1791473760994.jpg",
+  heroPizza:
+    "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1600&q=80",
+
+  specialSlice:
+    "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=1200&q=80",
+
+  creamyPasta:
+    "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1200&q=80",
+
+  cafeAmbience:
+    "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1200&q=80",
+
+  takeawayBox:
+    "https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1200&q=80",
 };
+
 
 export interface ReviewItem {
   id: string;
